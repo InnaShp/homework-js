@@ -4,9 +4,9 @@ console.log('Inna Shpachynska');
 // point 3
 let age = 24;
 let newAge = 43;
-alert(`${age}, ${newAge}`);
+console.log(age, newAge);
 age = newAge;
-alert(`${age}, ${newAge}`);
+console.log(age, newAge);
 
 // point 4
 const person  = {
