@@ -48,7 +48,7 @@ function showResultsTask2() {
   } else if (firstSide + secondSide > thirdSide && firstSide + thirdSide > secondSide && secondSide + thirdSide > firstSide) {
     const p = (firstSide + secondSide + thirdSide) / 2;
     const areaOfTriangle = Math.sqrt(p * (p - firstSide) * (p - secondSide) * (p - thirdSide));
-    console.log(areaOfTriangle.toFixed(3));
+    console.log('Area of triangle is ' + areaOfTriangle.toFixed(3));
   } else console.log('The triangle with the given sides does not exist.');
 
   //point 5
@@ -65,4 +65,22 @@ function showResultsTask2() {
   const newArray = arr.filter(num => !mostFrequentNumber.includes(num));
   console.log(mostFrequentNumber);
   console.log(newArray);
+
+  //point 6
+  const pricePer100Lines = 50;
+  const eachThirdDelay = 20;
+  const linesPerIncome = 100
+
+  function showLinesCount() {
+    const expectedIncome = +prompt('What income do you expect to have?');
+    const delayCount = +prompt('How many times have you been delayed?');
+    const baseLines = Math.ceil(expectedIncome/pricePer100Lines)* linesPerIncome;
+    const penaltyLines = delayCount >= 3 ? Math.ceil(Math.floor(delayCount/3*eachThirdDelay)/pricePer100Lines) * linesPerIncome : 0;
+    const linesCount = baseLines + penaltyLines;
+    console.log(`You should write ${linesCount} lines of code.`);
+  }
+  showLinesCount();
 }
+
+
+
