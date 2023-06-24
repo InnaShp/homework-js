@@ -63,16 +63,16 @@ function showResultsTask2() {
   let greeting = null;
   switch (true) {
     case (currentHour >= 23 || currentHour < 5):
-      greeting = "Доброї ночі";
+      greeting = 'Доброї ночі';
       break;
     case (currentHour >= 5 && currentHour < 11):
-      greeting = "Доброго ранку";
+      greeting = 'Доброго ранку';
       break;
     case (currentHour >= 11 && currentHour < 17):
-      greeting = "Доброго дня";
+      greeting = 'Доброго дня';
       break;
     default:
-      greeting = "Доброго вечора";
+      greeting = 'Доброго вечора';
   }
   console.log(greeting);
 
@@ -91,10 +91,28 @@ function showResultsTask2() {
   console.log(mostFrequentNumber);
   console.log(newArray);
 
+ 
+}
   //point 7
+  const menuOption =  prompt('Please, enter the number corresponding to the option you want to calculate: 1 - lines of code, 2 - number of delays, 3 - total income.');
+  switch (menuOption) {
+    case '1':
+      showLinesCount();
+      break;
+    case '2':
+      showDelaysCount();
+      break;
+    case '3': 
+      showIncomeCount();
+      break;
+    default: 
+      console.error('Out of range.');
+      break;
+  }
+
   const pricePer100Lines = 50;
   const eachThirdDelay = 20;
-  const linesPerIncome = 100
+  const linesPerIncome = 100;
 
   function showLinesCount() {
     const expectedIncome = +prompt('What income do you expect to have?');
@@ -104,7 +122,12 @@ function showResultsTask2() {
     const linesCount = baseLines + penaltyLines;
     console.log(`You should write ${linesCount} lines of code.`);
   }
-  showLinesCount();
-}
+  function showDelaysCount() {
+    const linesOfCode = +prompt('How many lines of the code have you written?');
+    const expectedIncome = +prompt('What income do you expect to have?');
+  }
+  function showIncomeCount() {
+    console.log('hi');
+  }
 
-
+ 
