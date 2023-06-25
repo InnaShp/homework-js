@@ -104,5 +104,15 @@ function showResultsTask3() {
   }
   console.log(findUnique([1, 2, 3, 5, 3])); 
   console.log(findUnique([1, 2, 3, 5, 11]));
+
+  //point 8
+  function create(str) {
+    return function(string) {
+      return str === string;
+    }
+  } 
+  const tom = create("pass_for_Tom");
+  tom("pass_for_Tom"); 
+  tom("pass_for_tom");
 }
 
