@@ -30,7 +30,7 @@ function showResultsTask2() {
   console.log(typeof res4);
 
   //point 3
-  const isAdult = prompt('Are you of legal age?');
+  const isAdult = prompt('Are you of legal age? Please enter your age.');
   if (0 < isAdult && isAdult < 18) {
     alert('You are too young.');
   } else {
