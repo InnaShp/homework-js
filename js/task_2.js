@@ -91,8 +91,6 @@ function showResultsTask2() {
   console.log(mostFrequentNumber);
   console.log(newArray);
 
- 
-}
   //point 7
   const menuOption =  prompt('Please, enter the number corresponding to the option you want to calculate: 1 - lines of code, 2 - number of delays, 3 - total income.');
   switch (menuOption) {
@@ -129,5 +127,7 @@ function showResultsTask2() {
   function showIncomeCount() {
     console.log('hi');
   }
+}
+  
 
  
