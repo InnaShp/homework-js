@@ -63,7 +63,7 @@ function showResultsTask4() {
   //point 3
   function calcRectangleArea(width, height) {
     try {
-      if ( 
+      if (
         Number.isNaN(width) ||
         Number.isNaN(height) ||
         typeof width !== 'number' ||
@@ -83,9 +83,43 @@ function showResultsTask4() {
   calcRectangleArea(6, 10.7);
 
   //point 4 
-  // function showMonthName(num) {
+  class MonthException extends Error {
+    constructor(message) {
+      super();
+      this.name = 'MonthException';
+      this.message = message;
+    }
+  }
+  function showMonthName(month) {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'];
+    if (month > 12 || month < 1)
+      throw new MonthException('Incorrect month number.');
+    return months[month - 1];
+  }
+  try {
+    console.log(showMonthName(5));
+    console.log(showMonthName(14));
+  } catch (error) {
+    console.error(error.name + ': ' + error.message);
+  }
 
-  // }
-  // console.log(showMonthName(5));  
-  // console.log(showMonthName(14));
+  //point 5
+  function showUser(id) {
+    if (id < 0) {
+      throw new Error(`ID must not be negative: ${id}`);
+    }
+    return { id };
+  }
+  function showUsers(ids) {
+    const users = ids.map(id => {
+      try {
+        return showUser(id);
+      } catch (error) {
+        console.error(error.message);
+      }
+    }).filter(user => user !== undefined);
+    console.log(users);
+  }
+  showUsers([7, -12, 44, 22]);
 }
