@@ -91,42 +91,42 @@ function showResultsTask2() {
   console.log(mostFrequentNumber);
   console.log(newArray);
 
-  //point 7
-  const menuOption =  prompt('Please, enter the number corresponding to the option you want to calculate: 1 - lines of code, 2 - number of delays, 3 - total income.');
-  switch (menuOption) {
-    case '1':
-      showLinesCount();
-      break;
-    case '2':
-      showDelaysCount();
-      break;
-    case '3': 
-      showIncomeCount();
-      break;
-    default: 
-      console.error('Out of range.');
-      break;
-  }
+  // //point 7
+  // const menuOption =  prompt('Please, enter the number corresponding to the option you want to calculate: 1 - lines of code, 2 - number of delays, 3 - total income.');
+  // switch (menuOption) {
+  //   case '1':
+  //     showLinesCount();
+  //     break;
+  //   case '2':
+  //     showDelaysCount();
+  //     break;
+  //   case '3': 
+  //     showIncomeCount();
+  //     break;
+  //   default: 
+  //     console.error('Out of range.');
+  //     break;
+  // }
 
-  const pricePer100Lines = 50;
-  const eachThirdDelay = 20;
-  const linesPerIncome = 100;
+  // const pricePer100Lines = 50;
+  // const eachThirdDelay = 20;
+  // const linesPerIncome = 100;
 
-  function showLinesCount() {
-    const expectedIncome = +prompt('What income do you expect to have?');
-    const delayCount = +prompt('How many times have you been delayed?');
-    const baseLines = Math.ceil(expectedIncome / pricePer100Lines) * linesPerIncome;
-    const penaltyLines = delayCount >= 3 ? Math.ceil(Math.floor(delayCount / 3 * eachThirdDelay) / pricePer100Lines) * linesPerIncome : 0;
-    const linesCount = baseLines + penaltyLines;
-    console.log(`You should write ${linesCount} lines of code.`);
-  }
-  function showDelaysCount() {
-    const linesOfCode = +prompt('How many lines of the code have you written?');
-    const expectedIncome = +prompt('What income do you expect to have?');
-  }
-  function showIncomeCount() {
-    console.log('hi');
-  }
+  // function showLinesCount() {
+  //   const expectedIncome = +prompt('What income do you expect to have?');
+  //   const delayCount = +prompt('How many times have you been delayed?');
+  //   const baseLines = Math.ceil(expectedIncome / pricePer100Lines) * linesPerIncome;
+  //   const penaltyLines = delayCount >= 3 ? Math.ceil(Math.floor(delayCount / 3 * eachThirdDelay) / pricePer100Lines) * linesPerIncome : 0;
+  //   const linesCount = baseLines + penaltyLines;
+  //   console.log(`You should write ${linesCount} lines of code.`);
+  // }
+  // function showDelaysCount() {
+  //   const linesOfCode = +prompt('How many lines of the code have you written?');
+  //   const expectedIncome = +prompt('What income do you expect to have?');
+  // }
+  // function showIncomeCount() {
+  //   console.log('hi');
+  // }
 }
   
 
