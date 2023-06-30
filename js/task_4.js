@@ -12,7 +12,7 @@ function showResultsTask4() {
       if (first >= arr.length || second >= arr.length || first < 0 || second < 0) {
         throw new Error("One or both of the indices exceed the array length.");
       }
-      console.log(arr[first] + arr[second]);
+      console.log(arr[first-1] + arr[second-1]);
     } catch (error) {
       console.error(error.message);
     }
