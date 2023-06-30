@@ -74,7 +74,7 @@ function showResultsTask4() {
       if (width <= 0 || height <= 0) {
         throw new Error('The measured value cannot be zero or less than zero.');
       }
-      const area = Math.round((height * width) / 2);
+      const area = Math.round(height * width);
       console.log(`The area of the right triangle is ${area}.`);
     } catch (error) {
       console.error(`${error.name}: ${error.message}`);
