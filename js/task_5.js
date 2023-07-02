@@ -74,4 +74,84 @@ function showResultsTask5() {
   const stud1 = new Student("Petro", "Petrenko", 2019);
   console.log(stud1.showFullName("Petrovych")); 
   console.log("Current course: " + stud1.showCourse());
+
+  //point 4
+  class Marker {
+    constructor(color, inkQuantity ) {
+      this.color = color;
+      this.inkQuantity = inkQuantity;
+    }
+    print(text) {
+      let printedText = '';
+      for (let i = 0; i < text.length; i++) {
+        if (text[i] !== ' ') {
+          if (this.inkQuantity >= 0.5) {
+            printedText += text[i];
+            this.inkQuantity -= 0.5;
+          } else {
+            break;
+          }
+        } else {
+          printedText += ' ';
+        }
+      }
+      console.log('%c' + printedText, `color: ${this.color}`);
+    }
+  }
+  class RefillableMarker extends Marker {
+    refill(inkQuantity) {
+      this.inkQuantity += inkQuantity;
+    }
+  }
+  const marker = new Marker('violet', 10);
+  marker.print('Lviv, Ukraine'); 
+  marker.print('Hello World'); 
+  const refillableMarker = new RefillableMarker('purple', 5);
+  refillableMarker.print('Lviv, Ukraine'); 
+  refillableMarker.refill(20); 
+  refillableMarker.print('Hello World');
+
+  //point 5
+  class Worker {
+    constructor(fullName, dayRate, workingDays) {
+      this.fullName = fullName;
+      this.dayRate = dayRate;
+      this.workingDays = workingDays;
+    }
+    showSalary() {
+      const salary = this.dayRate * this.workingDays;
+      console.log(`Worker's salary is ${salary}`);
+    }
+    #experience = 1.2;
+    get experience() {
+      return this.#experience;
+    }
+    set experience(newExperience) {
+      return this.#experience = newExperience;
+    }
+    showSalaryWithExperience() {
+      const salaryWithExperience = this.dayRate * this.workingDays * this.#experience;
+      console.log(`Worker's salary with experience is ${salaryWithExperience}`);
+    }
+  }
+  const workers = [
+    new Worker('John Johnson', 20, 23), 
+    new Worker('Tom Tomson', 48, 22),
+    new Worker('Andy Ander', 29, 23)
+  ];
+  workers.forEach(worker => {
+    console.log(worker.fullName);  
+    worker.showSalary();
+    console.log("New experience: " + worker.experience);
+    worker.experience = 1.5;
+    console.log("New experience: " + worker.experience);
+    worker.showSalaryWithExperience();
+  });
+  const sortedWorkers = workers.sort((a, b) => {
+    return (a.dayRate * a.workingDays * a.experience) - (b.dayRate * b.workingDays * b.experience);
+  });
+  sortedWorkers.forEach(worker => {
+    console.log(`${worker.fullName}: ${worker.dayRate * worker.workingDays * worker.experience}`);
+  });
+  
 }
