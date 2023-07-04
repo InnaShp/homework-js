@@ -1,4 +1,3 @@
-//point 1
 function showNumbers() {
   const list = document.getElementById('list');
   const firstElement = list.firstElementChild.textContent;
